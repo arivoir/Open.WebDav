@@ -2,7 +2,7 @@
 
 namespace Open.WebDav
 {
-    public class Class1
+    public class WebDavClient
     {
     }
 }
