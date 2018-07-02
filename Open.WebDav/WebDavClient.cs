@@ -161,7 +161,7 @@ namespace Open.WebDav
             }
         }
 
-        public async Task UploadFileAsync(string fileId, string contentType, Stream fileStream, IProgress<BytesProgress> progress, System.Threading.CancellationToken cancellationToken)
+        public async Task UploadFileAsync(string fileId, string contentType, Stream fileStream, IProgress<StreamProgress> progress, System.Threading.CancellationToken cancellationToken)
         {
             var uri = BuildApiUri(fileId);
             var client = CreateClient();
