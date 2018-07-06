@@ -7,6 +7,14 @@
     <Description>.Net Standard WebDav client</Description>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.3\Open.WebDav.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.3\Open.WebDav.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Open.IO" Version="1.0.0-CI00006" />
     <PackageReference Include="Open.Net.Http" Version="1.0.0-CI00006" />
