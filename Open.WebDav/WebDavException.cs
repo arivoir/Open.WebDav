@@ -1,33 +1,30 @@
-﻿using System;
+﻿namespace Open.WebDav;
 
-namespace Open.WebDav
+/// <summary>
+/// Provides information about exceptions thrown.
+/// </summary>
+public class WebDavException : Exception
 {
     /// <summary>
-    /// Provides information about exceptions thrown.
+    /// Initializes a new instance of the <see cref="WebDavException"/> class.
     /// </summary>
-    public class WebDavException : Exception
+    /// <param name="reasonPhrase">The reason phrase.</param>
+    /// <param name="statusCode">The status code.</param>
+    /// <param name="message">The message.</param>
+    public WebDavException(string reasonPhrase, int statusCode, string message)
+        : base(message)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WebDavException"/> class.
-        /// </summary>
-        /// <param name="reasonPhrase">The reason phrase.</param>
-        /// <param name="statusCode">The status code.</param>
-        /// <param name="message">The message.</param>
-        public WebDavException(string reasonPhrase, int statusCode, string message)
-            : base(message)
-        {
-            ReasonPhrase = reasonPhrase;
-            StatusCode = statusCode;
-        }
-
-        /// <summary>
-        /// Gets the reason why the exception happened.
-        /// </summary>
-        public string ReasonPhrase { get; private set; }
-
-        /// <summary>
-        /// Gets the status code of the network request.
-        /// </summary>
-        public int StatusCode { get; private set; }
+        ReasonPhrase = reasonPhrase;
+        StatusCode = statusCode;
     }
+
+    /// <summary>
+    /// Gets the reason why the exception happened.
+    /// </summary>
+    public string ReasonPhrase { get; private set; }
+
+    /// <summary>
+    /// Gets the status code of the network request.
+    /// </summary>
+    public int StatusCode { get; private set; }
 }
