@@ -43,7 +43,7 @@ namespace Open.WebDav.Test
         {
             var stringToUpload = "Hello, World!";
             var client = new WebDavClient(_server, _domain, _user, _password);
-            await client.UploadFileAsync(Path.Combine(_rootFolderId, "file.txt"), "text/plain", new MemoryStream(Encoding.UTF8.GetBytes(stringToUpload)), new Progress<StreamProgress>(p => { }), CancellationToken.None);
+            await client.UploadFileAsync(Path.Combine(_rootFolderId, "file.txt"), "text/plain", new MemoryStream(Encoding.UTF8.GetBytes(stringToUpload)), null, CancellationToken.None);
             var result = await client.PropFindAsync(_rootFolderId);
             var descendants = result.Descendants(WebDavClient.Response);
             Assert.That(descendants, Is.Not.Null);
